@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% if musician_list %}
+    <h1> The Famous Artists... </h1>
+    <hr>
+    <div class="border border-secondary p-3 rounded" style="margin-left: 230px; margin-right: 230px;">
+        {% for musician in musician_list %}
+        <div class="row me-2">
+            <div class="col-6">
+                <ul> <li> <a href="{% url 'Musician_Pedia:album_list' artist_id=musician.id %}"> {{ musician.first_name }} {{ musician.last_name }} ({{ musician.artist_age }}) </a> </li> </ul>
+            </div>
+            <div class="col-3" > <a href="{% url 'Musician_Pedia:update_artist' artist_id=musician.id %}" onclick="return confirm('Are You Sure ?')" class="btn btn-warning"> Update </a> </div>
+            <div class="col-3" > <a href="{% url 'Musician_Pedia:delete_artist' artist_id=musician.id %}" class="btn btn-danger" onclick="return confirm('Warning! Delete The Artist ?')"> Delete </a> </div>
+        </div>
+        
+            <hr class="col-8" style="margin: 1px; padding: 1px; width: 550px;margin-left: 30px;">
+        {% endfor %}
+    </div>
+{% else %}
+<br>
+<div class="bg-warning rounded">
+    <h3> Sorry! No Musician Is Found ... </h3>
+</div>
+
+{% endif %}
+<br>
+<div style="margin-left: 230px; margin-right: 230px;">
+    <a class="btn btn-info" href="{% url 'Musician_Pedia:add_artist' %}"> Add One ? </a>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% if list_of_album %}
+
+    <h1> Best Of {{ artist.first_name }} {{ artist.last_name }} </h1>
+    <h3><b> Artist Rating : {{ rate.album_ratings__avg }}/5 </b></h3>
+    
+    <table class="table table-bordered border-warning">
+        <tr class="row">
+            <th class="col-3"> Album Title </th>
+            <th class="col-4"> Release Date </th>
+            <th class="col-3"> Album Ratings </th>
+            <th class="col-1"> Update </th>
+            <th class="col-1"> Delete </th>
+        </tr>
+        {% for album in list_of_album %}
+        <tr class="row">
+            <td class="col-3 text-center"> {{ album.album_title }} </td>
+            <td class="col-4 text-center"> {{ album.release_date }} </td>
+            <td class="col-3 text-center"> 
+                
+                {% if album.album_ratings == 1 %}
+                <b> ★☆☆☆☆ </b>
+                {% elif album.album_ratings == 2 %}
+                <b> ★★☆☆☆ </b>
+                {% elif album.album_ratings == 3 %}
+                <b> ★★★☆☆ </b>
+                {% elif album.album_ratings == 4 %}
+                <b> ★★★★☆ </b>
+                {% elif album.album_ratings == 5 %}
+                <b> ★★★★★ </b>
+                {% endif %}
+
+            </td>
+            <td class="col-1"> 
+                <a href="{% url 'Musician_Pedia:update_album' album_id=album.id artist_id=artist.id %}" class="btn btn-warning btn-sm tb" onclick="return confirm('Are You Sure ?')"> Update </a>
+              </td>
+              <td class="col-1">
+                <a href="{% url 'Musician_Pedia:delete_album' album_id=album.id %}" class="btn btn-danger btn-sm tb" onclick="return confirm('Warning! Delete The Album ?')"> Delete </a>
+              </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% else %}
+ <h1> Sorry!!! No Data Available </h1>
+{% endif %}
+{% endblock %}
