@@ -10,34 +10,38 @@
   </head>
   <body>
     
-    <nav class="navbar navbar-expand-lg bg-info-subtle">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'Musician_Pedia:home' %}"> Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'Musician_Pedia:add_artist' %}"> Add An Artist </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'Musician_Pedia:add_album' %}"> Add An Album </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Alternatives
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_artist' %}"> Visit Artist Form </a></li>
-                  <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_album' %}"> Visit Album Form </a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="{% url 'Musician_Pedia:home' %}"> Visit Home </a></li>
-                </ul>
-              </li>
+      <nav class="navbar bg-secondary-subtle navbar-expand mx-auto">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active ms-5 fs-3 px-3 pt-0" aria-current="page" href="{% url 'Musician_Pedia:home' %}"> <b> <span class="text-danger">Ho</span><span class="text-primary">me</span> </b> </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active my-auto mx-2 fs-5" aria-current="page" href="{% url 'Musician_Pedia:add_artist' %}"> <b> Add Artist </b> </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link my-auto mx-2 fs-5" href="{% url 'Musician_Pedia:add_album' %}"> <b> Add Album </b> </a>
+                </li>
+              </ul>
+              <ul class="navbar-nav  me-3 mb-2 mb-lg-0 ms-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle my-auto me-4 fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <b> Alternatives </b>
+                  </a>
+                  <ul class="dropdown-menu ">
+                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_artist' %}"> <b> Visit Artist Form </b> </a></li>
+                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_album' %}"> <b> Visit Album Form </b> </a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:home' %}"> <b> Visit Home </b> </a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-        <div class="container bg-body-secondary rounded p-4 mt-3">
+        </nav>
+    
+        <div class="container mx-auto mt-3">
     
         {% block body_block %}
         

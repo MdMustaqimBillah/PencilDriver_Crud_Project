@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block body_block %}
       <h1>Your Favorite Artist?</h1>
 
       <form action="" method="POST">
-            {{ form.as_p }}
+            {{ form|crispy }}
             {% csrf_token %}
             <input class="btn btn-success"  type="submit" value="Submit">
       </form>
