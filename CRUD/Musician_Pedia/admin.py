@@ -1,6 +1,6 @@
 from django.contrib import admin
-from Musician_Pedia.models import Musician, Album
+from Musician_Pedia.models import Writer, Book
 
 # Register your models here.
-admin.site.register(Musician)
-admin.site.register(Album)
+admin.site.register(Writer)
+admin.site.register(Book)

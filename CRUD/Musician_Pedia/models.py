@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Musician(models.Model):
+class Writer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     artist_age = models.IntegerField()
@@ -11,9 +11,9 @@ class Musician(models.Model):
         return self.first_name + '' + self.last_name + '' + f'( {self.artist_age} )'
     
 
-class Album(models.Model):
-    name = models.ForeignKey(Musician, on_delete = models.CASCADE)
-    album_title = models.CharField(max_length=25)
+class Book(models.Model):
+    name = models.ForeignKey(Writer, on_delete = models.CASCADE)
+    book_title = models.CharField(max_length=25)
     release_date = models.DateField()
     stars = ((1,'Worst'),
              (2,'Bad'),
@@ -21,7 +21,7 @@ class Album(models.Model):
              (4,'Good'),
              (5,'Best')
              )
-    album_ratings = models.IntegerField(choices=stars)
+    book_ratings = models.IntegerField(choices=stars)
 
     def __str__(self):
-        return self.title + " " + f'({"★" * self.ratings })'
+        return self.book_title + " " + f'({"★" * self.book_ratings })'

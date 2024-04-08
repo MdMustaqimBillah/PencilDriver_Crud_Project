@@ -1,32 +1,32 @@
 {% extends 'base.html' %}
 {% block body_block %}
-{% if musician_list %}
+{% if writer_list %}
 
-    <h1> The Famous Artists... </h1>
+    <h1> The Famous Writers... </h1>
     <hr class="mx-auto" style="width: 40%;">
     
     <div class="border border-secondary p-3 rounded basic">
-        {% for musician in musician_list %}
+        {% for writer in writer_list %}
         <div class="row me-2 centered">
-            <div class="col-lg-6 col-sm-12">
-                <ul> <li> <a href="{% url 'Musician_Pedia:album_list' artist_id=musician.id %}"> {{ musician.first_name }} {{ musician.last_name }} ({{ musician.artist_age }}) </a> </li> </ul>
+            <div class="col-lg-6 col-sm-12 mt-2 text-start">
+                <ul > <li> <a href="{% url 'Musician_Pedia:book_list' id=writer.id %}" class="text-start"> {{ writer.first_name }} {{ writer.last_name }} ({{ writer.artist_age }}) </a> </li> </ul>
             </div>
-            <div class="col-lg-3 col-sm-6 my-1" > <a href="{% url 'Musician_Pedia:update_artist' artist_id=musician.id %}" onclick="return confirm('Are You Sure ?')" class="btn btn-warning"> Update </a> </div>
-            <div class="col-lg-3 col-sm-6 my-1" > <a href="{% url 'Musician_Pedia:delete_artist' artist_id=musician.id %}" class="btn btn-danger" onclick="return confirm('Warning! Delete The Artist ?')"> Delete </a> </div>
+            <div class="col-lg-3 col-sm-6 my-1 " > <a href="{% url 'Musician_Pedia:update_writer' id=writer.id %}" onclick="return confirm('Are You Sure ?')" class="btn btn-warning"> Update </a> </div>
+            <div class="col-lg-3 col-sm-6 my-1" > <a href="{% url 'Musician_Pedia:delete_writer' id=writer.id %}" class="btn btn-danger" onclick="return confirm('Warning! Delete The Artist ?')"> Delete </a> </div>
         </div>
         
-            <hr class="col-11 mx-auto" >
+            <hr class="col-11 mx-auto my-0" >
         {% endfor %}
     </div>
 {% else %}
 <br>
 <div class="bg-warning rounded">
-    <h3> Sorry! No Musician Is Found ... </h3>
+    <h3> Sorry! No Writer Has Been Founded... </h3>
 </div>
 
 {% endif %}
 <br>
 <div class="basic">
-    <a class="btn btn-info" href="{% url 'Musician_Pedia:add_artist' %}"> Add One ? </a>
+    <a class="btn btn-info" href="{% url 'Musician_Pedia:add_writer' %}"> Add One ? </a>
 </div>
 {% endblock %}

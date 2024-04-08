@@ -15,13 +15,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active ms-5 fs-3 px-3 pt-0" aria-current="page" href="{% url 'Musician_Pedia:home' %}"> <b> <span class="text-danger">Ho</span><span class="text-primary">me</span> </b> </a>
+                  <a class="nav-link active ms-5 fs-3 px-3 pt-0" aria-current="page" href="{% url 'Musician_Pedia:home' %}"> <b> <span class="text-danger">Pencil/</span><span class="text-primary">/Driver</span> </b> </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active my-auto mx-2 fs-5" aria-current="page" href="{% url 'Musician_Pedia:add_artist' %}"> <b> Add Artist </b> </a>
+                  <a class="nav-link active my-auto ms-3 me-1 fs-5" aria-current="page" href="{% url 'Musician_Pedia:add_writer' %}"> <b> Add Writer </b> </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link my-auto mx-2 fs-5" href="{% url 'Musician_Pedia:add_album' %}"> <b> Add Album </b> </a>
+                  <a class="nav-link my-auto mx-1 fs-5" href="{% url 'Musician_Pedia:add_book' %}"> <b> Add Book </b> </a>
                 </li>
               </ul>
               <ul class="navbar-nav  me-3 mb-2 mb-lg-0 ms-auto">
@@ -30,10 +30,10 @@
                     <b> Alternatives </b>
                   </a>
                   <ul class="dropdown-menu ">
-                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_artist' %}"> <b> Visit Artist Form </b> </a></li>
-                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_album' %}"> <b> Visit Album Form </b> </a></li>
+                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_writer' %}"> <b> Writer Entry </b> </a></li>
+                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_book' %}"> <b> Book Entry </b> </a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:home' %}"> <b> Visit Home </b> </a></li>
+                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:home' %}"> <b> Go Home </b> </a></li>
                   </ul>
                 </li>
               </ul>

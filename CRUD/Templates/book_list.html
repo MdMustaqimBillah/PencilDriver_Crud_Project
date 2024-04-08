@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% if list_of_books %}
+
+    <h1> Best Of {{ writer.first_name }} {{ writer.last_name }} </h1>
+    <h3><b> Writer's Rating : {{ rate.book_ratings__avg }}/5 </b></h3>
+    
+    <table class="table table-bordered border-warning">
+        <tr class="row">
+            <th class="col-lg-3 col-3 col-sm-3 col-md-3"> Book Title </th>
+            <th class="col-lg-4 col-3 col-sm-2 col-md-3"> Release Date </th>
+            <th class="col-lg-3 col-2 col-sm-3 col-md-2"> Book Ratings </th>
+            <th class="col-lg-1 col-2 col-sm-2 col-md-2"> Update </th>
+            <th class="col-lg-1 col-2 col-sm-2 col-md-2"> Delete </th>
+        </tr>
+        {% for book in list_of_books %}
+        <tr class="row">
+            <td class="col-lg-3 col-3 col-sm-3 col-md-3 text-center"> {{ book.book_title }} </td>
+            <td class="col-lg-4 col-3 col-sm-2 col-md-3 text-center"> {{ book.release_date }} </td>
+            <td class="col-lg-3 col-2 col-sm-3 col-md-2 text-center"> 
+                
+                {% if book.book_ratings == 1 %}
+                <b> ★☆☆☆☆ </b>
+                {% elif book.book_ratings == 2 %}
+                <b> ★★☆☆☆ </b>
+                {% elif book.book_ratings == 3 %}
+                <b> ★★★☆☆ </b>
+                {% elif book.book_ratings == 4 %}
+                <b> ★★★★☆ </b>
+                {% elif book.book_ratings == 5 %}
+                <b> ★★★★★ </b>
+                {% endif %}
+
+            </td>
+            <td class="col-lg-1 col-2 col-sm-2 col-md-2 text-center "> 
+                <a href="{% url 'Musician_Pedia:update_book' book_id=book.id id=writer.id %}" class="btn btn-warning btn-sm " onclick="return confirm('Are You Sure ?')"> Update </a>
+              </td>
+              <td class="col-lg-1 col-2 col-sm-2 col-md-2 text-center ">
+                <a href="{% url 'Musician_Pedia:delete_book' book_id=book.id %}" class="btn btn-danger btn-sm " onclick="return confirm('Warning! Delete The Book ?')"> Delete </a>
+              </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% else %}
+<div class="text-center" >
+ <h1 class="mt-3 text-secondary"> Sorry!!! No Data Available </h1>
+ <a href="{% url 'Musician_Pedia:add_book' %}" class="btn btn-warning mt-5 text-center" style="width: 50%;"> Add One ? </a>
+ </div>
+{% endif %}
+{% endblock %}

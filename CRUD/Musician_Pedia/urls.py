@@ -6,11 +6,11 @@ app_name = 'Musician_Pedia'
 
 urlpatterns =[
     path('', views.home, name='home'),
-    path('album_form/', views.add_album, name='add_album'),
-    path('artist_form/', views.add_artist, name='add_artist'),
-    path('list_albums/<int:artist_id>/', views.album_list, name ='album_list'),
-    path('update_album/<int:album_id>/<int:artist_id>',views.update_album, name='update_album'),
-    path('update_artist/<int:artist_id>/', views.update_artist, name='update_artist'),
-    path('delete_artist/<int:artist_id>/', views.delete_artist, name='delete_artist'),
-    path('delete_album/<int:album_id>/', views.delete_album, name='delete_album'),
+    path('book_form/', views.add_book, name='add_book'),
+    path('writer_form/', views.add_writer, name='add_writer'),
+    path('book_list/<int:id>/', views.book_list, name ='book_list'),
+    path('update_book/<int:book_id>/<int:id>',views.update_book, name='update_book'),
+    path('update_writer/<int:id>/', views.update_writer, name='update_writer'),
+    path('delete_writer/<int:id>/', views.delete_writer, name='delete_writer'),
+    path('delete_book/<int:book_id>/', views.delete_book, name='delete_book'),
 ]

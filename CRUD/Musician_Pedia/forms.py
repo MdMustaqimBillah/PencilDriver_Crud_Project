@@ -1,17 +1,17 @@
 from django import forms
-from Musician_Pedia.models import Musician, Album
+from Musician_Pedia.models import Writer, Book
 
 #Forms
 
-class MusicianForm(forms.ModelForm):
+class WriterForm(forms.ModelForm):
     class Meta:
-        model = Musician
+        model = Writer
         fields = '__all__'
 
 
-class AlbumForm(forms.ModelForm):
+class BookForm(forms.ModelForm):
     class Meta:
-        model = Album
+        model = Book
         fields = '__all__'
         widgets = {
             'release_date': forms.DateInput(attrs={'type': 'date'})
