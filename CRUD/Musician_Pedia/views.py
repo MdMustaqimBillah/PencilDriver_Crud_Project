@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse
-from Musician_Pedia.forms import WriterForm, BookForm
+from Musician_Pedia.forms import WriterForm, BookForm, InduvidualsBookForm
 from Musician_Pedia.models import Writer, Book
 from django.db.models import Avg
 
@@ -40,6 +40,7 @@ def add_book(request):
         form = BookForm(request.POST)
         if form.is_valid():
             form.save()
+            return HttpResponseRedirect(reverse('home'))
             
     return render(request, 'book_form.html', context=dictionary)
 
@@ -104,3 +105,19 @@ def delete_book(request, book_id):
         "alert": "Sucessfully Deleted The Book"
     }
     return render(request, 'delete.html', context=dictionary)
+
+def add_individuals_book(request, id):
+    form = InduvidualsBookForm()
+    writer = Writer.objects.get(pk=id)
+    if request.method == 'POST':
+        form = InduvidualsBookForm(request.POST)
+        if form.is_valid():
+            book=form.save(commit=False)
+            book.name = writer
+            book.save()
+            return HttpResponseRedirect(reverse('Musician_Pedia:book_list', args=[id]))
+    dictionary = {
+        'title':'Update Resource',
+        'form':form
+    }
+    return render(request, 'add_individuals_book.html', context=dictionary)

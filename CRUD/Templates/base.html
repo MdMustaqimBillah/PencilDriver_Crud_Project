@@ -9,38 +9,39 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
   <body>
-    
-      <nav class="navbar bg-secondary-subtle navbar-expand mx-auto">
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active ms-5 fs-3 px-3 pt-0" aria-current="page" href="{% url 'Musician_Pedia:home' %}"> <b> <span class="text-danger">Pencil/</span><span class="text-primary">/Driver</span> </b> </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active my-auto ms-3 me-1 fs-5" aria-current="page" href="{% url 'Musician_Pedia:add_writer' %}"> <b> Add Writer </b> </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link my-auto mx-1 fs-5" href="{% url 'Musician_Pedia:add_book' %}"> <b> Add Book </b> </a>
-                </li>
-              </ul>
-              <ul class="navbar-nav  me-3 mb-2 mb-lg-0 ms-auto">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle my-auto me-4 fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <b> Alternatives </b>
-                  </a>
-                  <ul class="dropdown-menu ">
-                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_writer' %}"> <b> Writer Entry </b> </a></li>
-                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_book' %}"> <b> Book Entry </b> </a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{% url 'Musician_Pedia:home' %}"> <b> Go Home </b> </a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    
+     
+      <nav class="navbar navbar-expand-lg bg-body-tertiary ps-5 pe-4 border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'Musician_Pedia:home' %}"> <span class="text-danger fs-3">Pencil/</span><span class="text-primary fs-3">/Driver</span> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+        <li class="nav-item mx=2">
+          <a class="nav-link active" aria-current="page" href="{% url 'Musician_Pedia:add_writer' %}"> Add Writer </a>
+        </li>
+        <hr>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="{% url 'Musician_Pedia:add_book' %}"> Add Book </a>
+        </li>
+        <hr>
+        <li class="nav-item dropdown mx-2">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Alternatives
+          </a>
+          <ul class="dropdown-menu text-center">
+            <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_writer' %}"> Writer Entry </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_book' %}"> Book Entry </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'Musician_Pedia:home' %}"> Go Home </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
         <div class="container mx-auto mt-3">
     
         {% block body_block %}
