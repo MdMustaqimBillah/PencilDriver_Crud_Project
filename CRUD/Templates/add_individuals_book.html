@@ -4,7 +4,7 @@
       <h1 data-aos="fade-down-right" data-aos-duration="2000">A {{ writer.first_name }} {{ writer.last_name }}'s Book ? </h1>
       <hr class="mx-auto" style="width: 70%;">
 
-      <form action="" method="POST" data-aos="fade-up-left" data-aos-duration="2000">
+      <form action="" method="POST" data-aos="zoom-in-up" data-aos-duration="2000">
             {{ form|crispy }}
             {% csrf_token %}
             <input class="btn btn-success"  type="submit" value="Submit">

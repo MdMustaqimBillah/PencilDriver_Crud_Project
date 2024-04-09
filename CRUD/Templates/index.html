@@ -2,11 +2,10 @@
 {% block body_block %}
 {% if writer_list %}
 
-    <h1 data-aos="fade-up"
-    data-aos-anchor-placement="bottom-center" data-aos-duration="1500"> The Famous Writers </h1>
+    <h1 > The Famous Writers </h1>
     <hr class="mx-auto" style="width: 40%;">
     
-    <div class="border border-secondary p-3 rounded basic" data-aos="zoom-out-left" data-aos-duration="2000">
+    <div class="border border-secondary p-3 rounded basic ">
         {% for writer in writer_list %}
         <div class="row me-2 centered">
             <div class="col-lg-6 col-sm-12 mt-2  text-start">
@@ -28,6 +27,6 @@
 {% endif %}
 <br>
 <div class="basic">
-    <a class="btn btn-info mt-3" href="{% url 'Musician_Pedia:add_writer' %}" data-aos="zoom-in-down" data-aos-duration="2000"> Add One ? </a>
+    <a class="btn btn-info mt-3" href="{% url 'Musician_Pedia:add_writer' %}"> Add One ? </a>
 </div>
 {% endblock %}
