@@ -31,24 +31,128 @@
             Alternatives
           </a>
           <ul class="dropdown-menu text-center">
-            <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_writer' %}"> Writer Entry </a></li>
+            <li><a class="dropdown-item" href="#About"> About Us </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'Musician_Pedia:add_book' %}"> Book Entry </a></li>
+            <li><a class="dropdown-item" href="#links"> Social Links </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="{% url 'Musician_Pedia:home' %}"> Go Home </a></li>
+            <li><a class="dropdown-item" href="#Contact"> Contact </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#Copyright"> Others </a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-        <div class="container mx-auto mt-3">
+        <div class="container mx-auto my-3">
     
         {% block body_block %}
         
         {% endblock %}
+        {% block footer_block %}
     
         </div>
+        <section class="footer bg-dark px-3 pt-3 pb-5">
+          <div class="row text-center">
+
+            <!-- About Us Section -->
+
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 text-light text-center my-2 px-2" id="About">
+              <h1> Who Are We ? </h1>
+              <hr class="hr-footer text-center">
+              <p>As a recent entrant in the world of programming, I'm an enthusiastic learner with a growing proficiency in JavaScript, Python, Django and React. My knowledge is rooted in self-study and practical projects, which has instilled in me a strong foundation and the determination to further develop my skills. As a Management student, my ability to think critically, work under pressure, and collaborate effectively sets me apart. I'm eager to contribute my passion for technology and dedication to teamwork to your IT projects and continue my journey of growth in the field.  I have worked on some projects while learning JavaScript and Python and their framework. Thus, I have made responsive websites. Through the path I have demonstrated my problem solving skills, ensured data integrity and contributed various small-scale applications to sharpen my coding skill. </p></div>
+
+              <!-- links and Others Section -->
+
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center my-2 px-2" id="links">
+              <h1 class="text-light mb-3"> Our Social Media Links </h1>
+              <hr class="text-light hr-footer text-center">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      facebook link
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>You are very welcome to visit my facebook profile.</strong>To visit my facebook account please click on the icon.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      linkdin link
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>You are very welcome to visit my linkdin profile.</strong>To visit my linkdin account please click on the icon.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Github Link
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>You are very welcome to visit my Github profile.</strong>To visit my Github account please click on the icon.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-light my-3">
+                <h1> About This Project </h1>
+                <p class="fs-6 text-center py-2">
+                   This project is a simple example of CRUD project. We have created this project using Django framework and its built-in packages. To design and make the User Interface attractive we used bootstrap 5. Besides, to ensure the webapp's efficient functionality, we created customized filters. Hope that you all like this webapp.
+                </p>
+              </div>
+            </div>
+
+            <!-- Contact Section -->
+
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-light text-center mt-2 mb-3 px-3" id="Contact">
+              <h1> Contact Us </h1>
+              <hr class="hr-footer text-center">
+              <p class="fs-4 text-center"> Mobile: +8801533805334 </p>
+              <p class="fs-4 text-center"> Alternative : +8801311337603 </p>
+              <br>
+              <p class="fs-4 text-center"> Mail: muhammedalnoman@gmail.com </p>
+              <p class="fs-4 text-center"> Website: www.muhammedalnoman.com </p>
+            </div>
+          </div>
+          <!-- Copyright Details -->
+          <div class="row border-top border-bottom border-light  text-light" id="Ownership">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center mt-2">
+              <div class="row">
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center">
+                      <p class="text-center">Designed by:</p>
+                      <p class="text-center">Muhammad Noman</p>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 text-center">
+                      <p class="text-center">Developed by:</p>
+                      <p class="text-center">Md. Mustaqim Billah</p>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center">
+                      <p class="text-center"> Partners:</p>
+                      <p class="text-center"> MT Technologies</p>
+                  </div>
+                </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center mt-2 text-warning" id="Copyright">
+            <p class="text-center fs-4">© Md.Mustaqim Billah ®</p>
+        </div>
+
+        </section>
+        {% endblock %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>

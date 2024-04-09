@@ -8,7 +8,7 @@
     <div class="border border-secondary p-3 rounded basic">
         {% for writer in writer_list %}
         <div class="row me-2 centered">
-            <div class="col-lg-6 col-sm-12 mt-2 text-start">
+            <div class="col-lg-6 col-sm-12 mt-2  text-start">
                 <ul > <li> <a href="{% url 'Musician_Pedia:book_list' id=writer.id %}" class="text-start"> {{ writer.first_name }} {{ writer.last_name }} ({{ writer.artist_age }}) </a> </li> </ul>
             </div>
             <div class="col-lg-3 col-sm-6 my-1 " > <a href="{% url 'Musician_Pedia:update_writer' id=writer.id %}" onclick="return confirm('Are You Sure ?')" class="btn btn-warning"> Update </a> </div>

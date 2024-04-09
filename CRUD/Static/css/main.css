@@ -20,3 +20,7 @@ th{
     margin-left: 21%;
     margin-right: 21%;
 }
+p{
+    text-align: justify;
+    font-family: 'Times New Roman';
+}
