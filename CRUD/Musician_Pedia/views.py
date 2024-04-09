@@ -118,6 +118,7 @@ def add_individuals_book(request, id):
             return HttpResponseRedirect(reverse('Musician_Pedia:book_list', args=[id]))
     dictionary = {
         'title':'Update Resource',
-        'form':form
+        'form':form,
+        'writer':writer,
     }
     return render(request, 'add_individuals_book.html', context=dictionary)
