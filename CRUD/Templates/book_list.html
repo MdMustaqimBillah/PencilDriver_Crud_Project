@@ -46,7 +46,7 @@
     </table>
     <a href="{% url 'Musician_Pedia:add_individuals_book' id=writer.id %}" data-aos="zoom-in" data-aos-duration="2000" class="btn btn-warning mt-5 text-center"> Add More ? </a>
 {% else %}
-<div class="text-center" >
+<div class="text-center" data-aos="zoom-in-left" data-aos-duration="2000">
  <h1 class="mt-3 text-secondary"> Sorry!!! No Data Available </h1>
  <a href="{% url 'Musician_Pedia:add_individuals_book' id=writer.id %}" class="btn btn-warning mt-3 text-center" style="width: 50%;"> Add One ? </a>
  </div>
