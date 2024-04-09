@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block body_block %}
-<h1> Update The Book ? </h1>
+<h1 data-aos="fade-down-right" data-aos-duration="2000"> Update The Book ? </h1>
+<hr class="mx-auto" style="width: 40%;">
 
-<form action="" method="POST">
-    {{ form.as_p }}
+<form action="" method="POST" data-aos="fade-down-left" data-aos-duration="2000">
+    {{ form|crispy }}
     {% csrf_token %}
     <input class="btn btn-success"  type="submit" value="Submit">
 </form>

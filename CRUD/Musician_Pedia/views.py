@@ -45,7 +45,7 @@ def add_book(request):
     return render(request, 'book_form.html', context=dictionary)
 
 
-def book_list(request , id ):
+def book_list(request , id):
     list_of_books = Book.objects.filter(name_id=id).order_by('release_date')
     writer = Writer.objects.get(pk=id )
     rate = Book.objects.filter(name_id=id).aggregate(Avg('book_ratings'))
